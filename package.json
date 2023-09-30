@@ -1,0 +1,11 @@
+{
+  "name": "rapid-api",
+  "version": "1.0.0",
+  "description": "rapid api s",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
