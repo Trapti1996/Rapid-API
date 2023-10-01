@@ -1,8 +1,9 @@
 const express = require('express');
+const morgan=require('morgan');
 const app = express();
 const port = 8000;
 
-
+app.use(morgan('dev'));
 
 ///  endpoint - /  ==> handled by defalut call of GET
 app.get('/', (req, res) => {
