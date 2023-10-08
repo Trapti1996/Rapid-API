@@ -14,8 +14,9 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/helth_check', (req, res) => {
-    return res.send(req.body.customers);
+app.post('/function', (req, res)=> {
+    return res.send(req.body);
+    
 })
 
 app.listen(port, (req, res) => {
