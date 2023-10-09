@@ -14,8 +14,13 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/function', (req, res)=> {
-    return res.send(req.body);
+app.post('/sum',(req,res)=>{
+    console.log("Num 1="+req.params.num1)
+    console.log("Num 2="+req.params.num2)
+    console.log("Result="+req.params.num1+req.params.num2)
+    res.send("this is save page")
+    res.end();
+
     
 })
 
