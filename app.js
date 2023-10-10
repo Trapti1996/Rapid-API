@@ -13,10 +13,26 @@ app.get('/', (req, res) => {
     return res.end('Server is up');
 })
 
+/*
+{
+    "first_name": "hakjseh",
+    "last_name": "ajhgdkj"
+}
+*/
+app.post('/user', (req, res) => {
 
-app.post('/function', (req, res)=> {
-    return res.send(req.body);
+    let body = req.body;
+    let firstName = body.first_name;
+    let lastName = body.last_name;
     
+    let fullName = firstName + " " + lastName;
+
+    console.log("--this is body-->>", fullName);
+
+    let response = {
+        fullName : fullName,
+    }
+    return res.send(response);
 })
 
 app.listen(port, (req, res) => {
