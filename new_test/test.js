@@ -9,9 +9,19 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 ///  endpoint - /  ==> handled by defalut call of GET
-app.get('/', (req, res) => {
-    return res.end('Server is up');
-})
+app.get('/ok', (req, res) => {
+
+    let name = req.query.name;
+    let phone = req.query.phone;
+
+
+    console.log("Name ="+req.params.name);
+    console.log("Phone no ="+req.params.phoneno);
+
+
+        res.status(200).send('OK');
+     
+});
 
 /*
 {
