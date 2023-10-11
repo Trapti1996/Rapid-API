@@ -11,12 +11,15 @@ app.use(bodyParser.json());
 ///  endpoint - /  ==> handled by defalut call of GET
 app.get('/ok', (req, res) => {
 
+    let query = req.query;
+
     let name = req.query.name;
     let phone = req.query.phone;
 
 
-    console.log("Name ="+req.params.name);
-    console.log("Phone no ="+req.params.phoneno);
+    console.log("Name =", name);
+    console.log("Phone no =", phone);
+    
 
 
         res.status(200).send('OK');
