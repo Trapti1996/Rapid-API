@@ -14,15 +14,18 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/sum',(req,res)=>{
-    console.log("Num 1="+req.params.num1)
-    console.log("Num 2="+req.params.num2)
-    console.log("Result="+req.params.num1+req.params.num2)
-    res.send("this is save page")
-    res.end();
+app.post('/concatenate',(req,res)=>{
+    const { first_name, last_name }= req.body;
 
+    if (!first_name || !last_name) {
+        return res.status(400).json({ error: 'Both first_name and last_name are required'});
+        }
+
+    const full_name ='${first_name} $ {last_name}';
+    res.json({ full_name });
     
-})
+    
+});
 
 app.listen(port, (req, res) => {
     console.log("=====server started===on port===", port);
